@@ -1,101 +1,70 @@
-import 'dart:convert';
-
-Movies moviesFromJson(String str) => Movies.fromJson(json.decode(str));
-
-String moviesToJson(Movies data) => json.encode(data.toJson());
-
 class Movies {
+  String? name;
+  int? runtime;
+  ModelImage? image;
+  String? summary;
+  Embedded? eEmbedded;
   Movies({
-    required this.d,
-    required this.q,
-    required this.v,
+    this.name,
+    this.runtime,
+    this.image,
+    this.summary,
+    this.eEmbedded,
   });
-
-  final List<D> d;
-  final String q;
-  final int v;
-
-  factory Movies.fromJson(Map<String, dynamic> json) => Movies(
-    d: List<D>.from(json["d"].map((x) => D.fromJson(x))),
-    q: json["q"],
-    v: json["v"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "d": List<dynamic>.from(d.map((x) => x.toJson())),
-    "q": q,
-    "v": v,
-  };
+  Movies.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    runtime = json['runtime'];
+    image = json['image'] != null ? ModelImage.fromJson(json['image']) : null;
+    summary = json['summary'];
+    eEmbedded =
+        json['_embedded'] != null ? Embedded.fromJson(json['_embedded']) : null;
+  }
 }
 
-class D {
-  D({
-    this.i,
-    required this.id,
-    required this.l,
-    required this.s,
-    this.q,
-    this.qid,
-    this.rank,
-    this.y,
-    this.yr,
-  });
-
-  final I? i;
-  final String id;
-  final String l;
-  final String s;
-  final String? q;
-  final String? qid;
-  final int? rank;
-  final int? y;
-  final String? yr;
-
-  factory D.fromJson(Map<String, dynamic> json) => D(
-    i: json["i"] == null ? null : I.fromJson(json["i"]),
-    id: json["id"],
-    l: json["l"],
-    s: json["s"],
-    q: json["q"],
-    qid: json["qid"],
-    rank: json["rank"],
-    y: json["y"],
-    yr: json["yr"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "i": i?.toJson(),
-    "id": id,
-    "l": l,
-    "s": s,
-    "q": q,
-    "qid": qid,
-    "rank": rank,
-    "y": y,
-    "yr": yr,
-  };
+class ModelImage {
+  String? medium;
+  String? original;
+  ModelImage({this.medium, this.original});
+  ModelImage.fromJson(Map<String, dynamic> json) {
+    medium = json['medium'];
+    original = json['original'];
+  }
 }
 
-class I {
-  I({
-    required this.height,
-    required this.imageUrl,
-    required this.width,
+class Embedded {
+  List<Episodes>? episodes;
+  Embedded({this.episodes});
+  Embedded.fromJson(Map<String, dynamic> json) {
+    if (json['episodes'] != null) {
+      episodes = <Episodes>[];
+      json['episodes'].forEach((v) {
+        episodes!.add(Episodes.fromJson(v));
+      });
+    }
+  }
+}
+
+class Episodes {
+  String? name;
+  int? season;
+  int? number;
+  int? runtime;
+  ModelImage? image;
+  String? summary;
+  Episodes({
+    this.name,
+    this.season,
+    this.number,
+    this.runtime,
+    this.image,
+    this.summary,
   });
-
-  final int height;
-  final String imageUrl;
-  final int width;
-
-  factory I.fromJson(Map<String, dynamic> json) => I(
-    height: json["height"],
-    imageUrl: json["imageUrl"],
-    width: json["width"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "height": height,
-    "imageUrl": imageUrl,
-    "width": width,
-  };
+  Episodes.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    season = json["season"];
+    number = json['number'];
+    runtime = json['runtime'];
+    image = json['image'] != null ? ModelImage.fromJson(json['image']) : null;
+    summary = json['summary'];
+  }
 }
