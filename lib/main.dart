@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_movie_app/views/home_page%20.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.latoTextTheme(),
+        //primarySwatch: Colors.green,
       ),
       home: const HomePage(),
     );
