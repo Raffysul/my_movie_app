@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,6 +9,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // void _fetchAllMovies() async {
+  //   http.get("https://online-movie-database.p.rapidapi.com/auto-complete?q=game%20of%20thr")
+  // }
   //final _tabcontroller = TabController(length: length, vsync: vsync)
   @override
   Widget build(BuildContext context) {
