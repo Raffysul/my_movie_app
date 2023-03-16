@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/movies.dart';
-import '../services/remote_services.dart';
-
 class InTheaterScreen extends StatefulWidget {
   const InTheaterScreen({Key? key}) : super(key: key);
 
@@ -11,60 +8,64 @@ class InTheaterScreen extends StatefulWidget {
 }
 
 class _InTheaterScreenState extends State<InTheaterScreen> {
-  // Movies? movies;
-  // var isLoaded = false;
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   getData();
-  // }
-  //
-  // getData() async {
-  //   movies = await ApiServices().getMovies();
-  //   if (movies != null) {
-  //     setState(() {
-  //       isLoaded = true;
-  //     });
-  //   }
-  // }
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: ApiServices().getMovies(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            final series = snapshot.data as Movies;
-            return Scaffold(
-              body: SafeArea(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ListView.builder(itemBuilder: (context, index) {
-                        return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      series.image!.original.toString()),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ));
-                      }),
-                    ],
-                  ),
+    return Scaffold(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Card(
+                elevation: 15,
+                color: Colors.transparent,
+                child: Image.asset(
+                  'assets/images/image1.png',
+                  height: 400,
+                  width: 400,
+                  alignment: Alignment.center,
+                  fit: BoxFit.contain,
                 ),
               ),
-            );
-          }
-        });
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Center(
+              child: Text(
+                'Ford V Ferrari',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF12153D),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.star,
+                    color: Color(0xFFFCC419),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    '8.2',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      )),
+    );
   }
 }
