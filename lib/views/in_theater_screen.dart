@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'movies_screen.dart';
+
 class InTheaterScreen extends StatefulWidget {
   const InTheaterScreen({Key? key}) : super(key: key);
 
@@ -8,26 +10,66 @@ class InTheaterScreen extends StatefulWidget {
 }
 
 class _InTheaterScreenState extends State<InTheaterScreen> {
+  var list = ["Action", "Crime", "Comedy", "Drama"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Card(
-                elevation: 15,
-                color: Colors.transparent,
-                child: Image.asset(
-                  'assets/images/image1.png',
-                  height: 400,
-                  width: 400,
-                  alignment: Alignment.center,
-                  fit: BoxFit.contain,
-                ),
+            const SizedBox(
+              height: 20,
+            ),
+            SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const ClampingScrollPhysics(),
+                child: Row(
+                  children: [
+                    for (var item in list)
+                      Container(
+                        height: 30,
+                        width: 90,
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.5),
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.white,
+                            shape: BoxShape.rectangle),
+                        child: Center(
+                          child: Text(
+                            item,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black),
+                          ),
+                        ),
+                      ),
+                  ],
+                )),
+            const SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                        builder: (context) => const MoviesScreen()),
+                  );
+                });
+              },
+              child: Image.asset(
+                'assets/images/image1.png',
+                height: 300,
+                width: 300,
+                alignment: Alignment.center,
+                fit: BoxFit.contain,
               ),
             ),
             const SizedBox(
@@ -35,9 +77,9 @@ class _InTheaterScreenState extends State<InTheaterScreen> {
             ),
             const Center(
               child: Text(
-                'Ford V Ferrari',
+                'Ford v Ferrari',
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 25,
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF12153D),
                 ),
@@ -48,6 +90,7 @@ class _InTheaterScreenState extends State<InTheaterScreen> {
             ),
             Center(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Icon(
                     Icons.star,
@@ -58,11 +101,14 @@ class _InTheaterScreenState extends State<InTheaterScreen> {
                   ),
                   Text(
                     '8.2',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       )),

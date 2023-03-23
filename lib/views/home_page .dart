@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 100,
+            toolbarHeight: 80,
             leading: const Icon(
               Icons.format_align_left,
               size: 25,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
               indicatorColor: Color(0xFFFE6D8E),
-              labelStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+              labelStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               indicatorSize: TabBarIndicatorSize.label,
               indicatorWeight: 2.0,
               //indicatorPadding: EdgeInsets.all(8),
