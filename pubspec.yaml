@@ -38,6 +38,15 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
   http: ^0.13.5
+  icons_launcher: ^2.1.0
+
+icons_launcher:
+  image_path: "assets/images/movielogo.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
 
 dev_dependencies:
   flutter_test:

@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 80,
+            toolbarHeight: 70,
             leading: const Icon(
               Icons.format_align_left,
               size: 25,

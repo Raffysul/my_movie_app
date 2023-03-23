@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_movie_app/views/home_page%20.dart';
 
 class MoviesScreen extends StatefulWidget {
@@ -9,6 +10,13 @@ class MoviesScreen extends StatefulWidget {
 }
 
 class _MoviesScreenState extends State<MoviesScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +32,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 children: <Widget>[
                   Image.asset(
                     'assets/images/image2.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                   Positioned(
                     top: 30,
@@ -41,6 +49,11 @@ class _MoviesScreenState extends State<MoviesScreen> {
                         size: 20,
                         color: Colors.black,
                       ),
+                    ),
+                  ),
+                  Positioned(
+                    child: Container(
+                      decoration: BoxDecoration()
                     ),
                   ),
                 ],
