@@ -29,11 +29,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              height: 325,
+              height: 300,
               //decoration: const BoxDecoration(color: Colors.white),
               //height: 30,
               child: Stack(
-                fit: StackFit.loose,
                 children: <Widget>[
                   Image.asset(
                     'assets/images/image2.png',
@@ -57,9 +56,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     ),
                   ),
                   Positioned(
-                    bottom: 0,
+                    bottom: 20,
                     left: 30,
-                    width: 400,
+                    width: 350,
                     height: 100,
                     child: Container(
                         // width: 100,
@@ -91,7 +90,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                   '150,212',
                                   style: TextStyle(
                                       color: Color(0xFF9A9BB2),
-                                      fontSize: 6,
+                                      fontSize: 8,
                                       fontWeight: FontWeight.w400),
                                 ),
                               ],
@@ -113,13 +112,17 @@ class _MoviesScreenState extends State<MoviesScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
+                                  height: 15,
+                                  width: 15,
                                   color: Colors.green,
-                                  child: const Text(
-                                    '86',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500),
+                                  child: const Center(
+                                    child: Text(
+                                      '86',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500),
+                                    ),
                                   ),
                                 ),
                                 const Text(
@@ -136,7 +139,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                   '52 critic reviews',
                                   style: TextStyle(
                                       color: Color(0xFF9A9BB2),
-                                      fontSize: 6,
+                                      fontSize: 8,
                                       fontWeight: FontWeight.w400),
                                 ),
                               ],
@@ -147,9 +150,9 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
@@ -219,14 +222,14 @@ class _MoviesScreenState extends State<MoviesScreen> {
               height: 10,
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 12),
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 children: [
                   for (var item in list)
                     Container(
-                      height: 35,
-                      width: 100,
-                      margin: const EdgeInsets.all(8),
+                      height: 30,
+                      width: 90,
+                      margin: const EdgeInsets.all(5),
                       //padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1.5),
@@ -240,7 +243,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                           style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
-                              color: Colors.black),
+                              color: Color(0xFF434670)),
                         ),
                       ),
                     ),
@@ -261,30 +264,72 @@ class _MoviesScreenState extends State<MoviesScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black),
+                        color: Color(0xFF12153D)),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Expanded(
+                    child: Text(
+                      'American car designer Carroll Shelby and driver Kn Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford in order.',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF737599),
+                          height: 1.5),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
                   Text(
-                    'Plot Summary',
+                    'Cast & Crew',
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black),
+                        color: Color(0xFF12153D)),
                   ),
                 ],
               ),
             ),
-
-            //RichText(text: InlineSpan)
+            SizedBox(height: 10,),
+            Row(
+              children: [
+                Column(
+                  children: [
+                    CircleAvatar(),
+                    //Image.asset('assets/images/profile1.png'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'James Mangold',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF434670)),
+                    )
+                  ],
+                )
+              ],
+            )
           ],
         ),
       )),
