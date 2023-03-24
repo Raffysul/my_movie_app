@@ -219,7 +219,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
               height: 10,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 12),
+              margin: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 children: [
                   for (var item in list)
@@ -250,15 +250,40 @@ class _MoviesScreenState extends State<MoviesScreen> {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'Plot Summary',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Plot Summary',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Plot Summary',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black),
+                  ),
+                ],
+              ),
+            ),
+
             //RichText(text: InlineSpan)
           ],
         ),
