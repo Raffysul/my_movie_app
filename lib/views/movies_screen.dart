@@ -79,7 +79,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                 Text(
                                   '8.2/10',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xFF12153D),
                                       fontSize: 10,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -102,7 +102,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                 Text(
                                   'Rate This',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xFF12153D),
                                       fontSize: 10,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -128,7 +128,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                                 const Text(
                                   'Metascore',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xFF12153D),
                                       fontSize: 10,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -164,7 +164,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                         'Ford v Ferrari',
                         style: TextStyle(
                             fontSize: 25,
-                            color: Colors.black,
+                            color: Color(0xFF12153D),
                             fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(
@@ -176,7 +176,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                             '2019',
                             style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.grey,
+                                color: Color(0xFF9A9BB2),
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -186,7 +186,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                             'PG-13',
                             style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Color(0xFF9A9BB2),
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -196,7 +196,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                             '2hr 32min',
                             style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Color(0xFF9A9BB2),
                                 fontWeight: FontWeight.w400),
                           ),
                         ],
@@ -213,7 +213,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       child: const Icon(
                         Icons.add,
                         size: 15,
-                        color: Colors.grey,
+                        color: Colors.white,
                       ))
                 ],
               ),
@@ -290,7 +290,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -309,27 +309,153 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
-            Row(
-              children: [
-                Column(
+            const SizedBox(height: 15,),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    CircleAvatar(),
-                    //Image.asset('assets/images/profile1.png'),
-                    SizedBox(
-                      height: 5,
+                    Column(
+                      children: const [
+                         CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 32,
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/profile1.png'),
+                            radius: 30,
+                          ),
+                        ),
+                        //Image.asset('assets/images/profile1.png'),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'James Mangold',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF434670)),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Director',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF9A9BB2)),
+                        ),
+                      ],
                     ),
-                    Text(
-                      'James Mangold',
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF434670)),
+                    // const SizedBox(width: 10,),
+                    Column(
+                      children: const [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 32,
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/profile2.png'),
+                            radius: 30,
+                          ),
+                        ),
+                        //Image.asset('assets/images/profile1.png'),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Matt Damon',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF434670)),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Carroll',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF9A9BB2)),
+                        ),
+                      ],
+                    ),
+                    // const SizedBox(width: 10,),
+                    Column(
+                      children: const [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 32,
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/profile3.png'),
+                            radius: 30,
+                          ),
+                        ),
+                        //Image.asset('assets/images/profile1.png'),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Christian Bale',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF434670)),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Ken Miles',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF9A9BB2)),
+                        ),
+                      ],
+                    ),
+                    // const SizedBox(width: 10,),
+                    Column(
+                      children: const [
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 32,
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/profile4.png'),
+                            radius: 30,
+                          ),
+                        ),
+                        //Image.asset('assets/images/profile1.png'),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Caltriona Balfe',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF434670)),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Mollie',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF9A9BB2)),
+                        ),
+                      ],
                     )
                   ],
-                )
-              ],
-            )
+                ),
+              ),
+            ),
+            const SizedBox(height: 30,),
           ],
         ),
       )),
